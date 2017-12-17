@@ -12,11 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts');
 });
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function() {
-    Route::get('/', 'DashboardController@index')->name('admin.index');
+Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function() {
+
+    Route::get('/register', 'AuthController@registerForm');
+    Route::post('/register', 'AuthController@register')->name('admin.register');
+    Route::get('/login', 'AuthController@loginForm');
+    Route::post('/login', 'AuthController@login')->name('admin.login');
+    Route::get('/logout', 'AuthController@logout');
+
+
+    Route::group(['middleware' => ['admin']], function() {
+        Route::get('/', 'DashboardController@index')->name('admin.index');
+    });
 });
-Auth::routes();
