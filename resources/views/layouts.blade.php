@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Classic Header - Top Bar 3 | Unify - Responsive Website Template</title>
+    <title>Armadio Website</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
@@ -44,124 +44,7 @@
 <body>
 <main>
     <!-- Header -->
-    <header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance" data-header-fix-moment="300">
-        <!-- Top Bar -->
-        <div class="u-header__section u-header__section--hidden u-header__section--dark g-bg-black g-py-7">
-            <div class="container">
-                <div class="row flex-column flex-md-row align-items-center justify-content-md-end text-uppercase g-font-weight-600 g-color-white g-font-size-13">
-                    <div class="col-auto mr-md-auto g-px-15">
-                        <i class="icon icon-weather-001 g-font-size-20 g-valign-middle g-mr-10"></i>
-                        13 &#8451; Chicago
-                    </div>
-
-                    <div class="col-auto g-px-15">
-                        <i class="fa fa-phone g-valign-middle g-mr-5"></i>
-                        1 800 88 4411
-                    </div>
-
-                    <div class="col-auto g-pos-rel g-z-index-3 g-px-15">
-                        <a href="#" id="languages-dropdown-invoker-2" class="g-color-white g-text-underline--none--hover" aria-controls="languages-dropdown-2" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#languages-dropdown-2"
-                           data-dropdown-type="css-animation" data-dropdown-duration="300" data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">EN
-                            <i class="fa fa-angle-down g-ml-3"></i>
-                        </a>
-                        <ul id="languages-dropdown-2" class="list-unstyled g-pos-abs g-left-0 g-bg-gray-dark-v1 g-width-160 g-pb-5 g-mt-12" aria-labelledby="languages-dropdown-invoker-2">
-                            <li>
-                                <a class="d-block g-color-white g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20" href="#">English</a>
-                            </li>
-                            <li>
-                                <a class="d-block g-color-white g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20" href="#">Spanish</a>
-                            </li>
-                            <li>
-                                <a class="d-block g-color-white g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20" href="#">Russian</a>
-                            </li>
-                            <li>
-                                <a class="d-block g-color-white g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20" href="#">German</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-auto g-px-15">
-                        <ul class="list-inline mb-0 g-mx-minus-3">
-                            <li class="list-inline-item g-valign-middle g-mx-3">
-                                <a class="d-block u-icon-v3 u-icon-size--xs g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-gray-dark-v1--hover g-text-underline--none--hover" href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-valign-middle g-mx-3">
-                                <a class="d-block u-icon-v3 u-icon-size--xs g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-gray-dark-v1--hover g-text-underline--none--hover" href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-valign-middle g-mx-3">
-                                <a class="d-block u-icon-v3 u-icon-size--xs g-rounded-50x g-bg-white g-color-gray-dark-v1 g-color-gray-dark-v1--hover g-text-underline--none--hover" href="#">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Top Bar -->
-
-        <div class="u-header__section u-header__section--light g-bg-white-opacity-0_8 g-py-10" data-header-fix-moment-exclude="g-bg-white-opacity-0_8 g-py-10" data-header-fix-moment-classes="g-bg-white u-shadow-v18 g-py-0">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <!-- Responsive Toggle Button -->
-                    <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-              <span class="hamburger hamburger--slider">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-              </span>
-              </span>
-                    </button>
-                    <!-- End Responsive Toggle Button -->
-                    <!-- Logo -->
-                    <a href="../../../index-2.html" class="navbar-brand">
-                        <img src="../../../assets/img/logo/logo-1.png" alt="Image Description">
-                    </a>
-                    <!-- End Logo -->
-
-                    <!-- Navigation -->
-                    <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
-                        <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
-                            <li class="nav-item g-mx-20--lg">
-                                <a href="#" class="nav-link px-0">Home
-
-                                </a>
-                            </li>
-                            <li class="nav-item g-mx-20--lg">
-                                <a href="#" class="nav-link px-0">Features
-
-                                </a>
-                            </li>
-                            <li class="nav-item g-mx-20--lg active">
-                                <a href="#" class="nav-link px-0">Shortcodes
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item g-mx-20--lg">
-                                <a href="#" class="nav-link px-0">Pages
-
-                                </a>
-                            </li>
-                            <li class="nav-item g-mx-20--lg">
-                                <a href="#" class="nav-link px-0">Demos
-
-                                </a>
-                            </li>
-                            <li class="nav-item g-ml-20--lg g-mr-0--lg">
-                                <a href="#" class="nav-link px-0">What's New
-
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Navigation -->
-                </div>
-            </nav>
-        </div>
-    </header>
+    @include('_partials.header')
     <!-- End Header -->
 
 
@@ -198,9 +81,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="g-pr-40 g-mt-20">
                         <div class="g-mb-30">
-                            <h2 class="h2 g-color-black g-font-weight-600 g-line-height-1_2 mb-4">What can
-                                <br>
-                                we provide?
+                            <h2 class="h2 g-color-black g-font-weight-600 g-line-height-1_2 mb-4">{{ trans('site.provider') }}
                             </h2>
                             <p class="g-font-weight-300 g-font-size-16">The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
                         </div>
@@ -373,144 +254,7 @@
     <!-- End Call To Action -->
 
     <!-- Footer -->
-    <div id="contacts-section" class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
-        <div class="container">
-            <div class="row">
-                <!-- Footer Content -->
-                <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
-                    <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0">About Us</h2>
-                    </div>
-
-                    <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-                </div>
-                <!-- End Footer Content -->
-
-                <!-- Footer Content -->
-                <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
-                    <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Latest Posts</h2>
-                    </div>
-
-                    <article>
-                        <h3 class="h6 g-mb-2">
-                            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Incredible template</a>
-                        </h3>
-                        <div class="small g-color-white-opacity-0_6">May 8, 2017</div>
-                    </article>
-
-                    <hr class="g-brd-white-opacity-0_1 g-my-10">
-
-                    <article>
-                        <h3 class="h6 g-mb-2">
-                            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">New features</a>
-                        </h3>
-                        <div class="small g-color-white-opacity-0_6">June 23, 2017</div>
-                    </article>
-
-                    <hr class="g-brd-white-opacity-0_1 g-my-10">
-
-                    <article>
-                        <h3 class="h6 g-mb-2">
-                            <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">New terms and conditions</a>
-                        </h3>
-                        <div class="small g-color-white-opacity-0_6">September 15, 2017</div>
-                    </article>
-                </div>
-                <!-- End Footer Content -->
-
-                <!-- Footer Content -->
-                <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
-                    <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Useful Links</h2>
-                    </div>
-
-                    <nav class="text-uppercase1">
-                        <ul class="list-unstyled g-mt-minus-10 mb-0">
-                            <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-                                <h4 class="h6 g-pr-20 mb-0">
-                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">About Us</a>
-                                    <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-                                </h4>
-                            </li>
-                            <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-                                <h4 class="h6 g-pr-20 mb-0">
-                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Portfolio</a>
-                                    <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-                                </h4>
-                            </li>
-                            <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-                                <h4 class="h6 g-pr-20 mb-0">
-                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Our Services</a>
-                                    <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-                                </h4>
-                            </li>
-                            <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
-                                <h4 class="h6 g-pr-20 mb-0">
-                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Latest Jobs</a>
-                                    <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-                                </h4>
-                            </li>
-                            <li class="g-pos-rel g-py-10">
-                                <h4 class="h6 g-pr-20 mb-0">
-                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Contact Us</a>
-                                    <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
-                                </h4>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- End Footer Content -->
-
-                <!-- Footer Content -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-                        <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Our Contacts</h2>
-                    </div>
-
-                    <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url(../../../assets/img/maps/map2.png);">
-                        <!-- Location -->
-                        <div class="d-flex g-mb-20">
-                            <div class="g-mr-10">
-              <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-                <i class="fa fa-map-marker"></i>
-              </span>
-                            </div>
-                            <p class="mb-0">795 Folsom Ave, Suite 600, <br> San Francisco, CA 94107 795</p>
-                        </div>
-                        <!-- End Location -->
-
-                        <!-- Phone -->
-                        <div class="d-flex g-mb-20">
-                            <div class="g-mr-10">
-              <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-                <i class="fa fa-phone"></i>
-              </span>
-                            </div>
-                            <p class="mb-0">(+123) 456 7890 <br> (+123) 456 7891</p>
-                        </div>
-                        <!-- End Phone -->
-
-                        <!-- Email and Website -->
-                        <div class="d-flex g-mb-20">
-                            <div class="g-mr-10">
-              <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-                <i class="fa fa-globe"></i>
-              </span>
-                            </div>
-                            <p class="mb-0">
-                                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@htmlstream.com</a>
-                                <br>
-                                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">www.htmlstream.com</a>
-                            </p>
-                        </div>
-                        <!-- End Email and Website -->
-                    </address>
-                </div>
-                <!-- End Footer Content -->
-            </div>
-        </div>
-    </div>
+    @include('_partials.footer')
     <!-- End Footer -->
 
     <!-- Copyright Footer -->
