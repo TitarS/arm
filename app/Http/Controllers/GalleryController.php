@@ -8,16 +8,16 @@ use App\Menu;
 
 class GalleryController extends Controller
 {
-    public function index() {
+    public function accessories() {
         $currentMenu = Menu::where('slug', 'accessories')->firstOrFail();
         $subMenus = $currentMenu->children()->get();
 
-        return view('pages.gallery_list', compact('currentMenu', 'subMenus'));
+        return view('pages.gallery', compact('currentMenu', 'subMenus'));
     }
 
-    public function gallery($slug) {
+    public function accessoriesList($slug) {
         $currentMenu = Menu::where('slug', $slug)->firstOrFail();
 
-        return view('pages.gallery_page', compact('currentMenu'));
+        return view('pages.gallery_list', compact('currentMenu'));
     }
 }

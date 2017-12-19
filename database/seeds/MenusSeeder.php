@@ -30,7 +30,22 @@ class MenusSeeder extends Seeder
             'id' => 4,
             'slug' => 'contacts',
         ]);
-        for ($i = 5; $i <= 8; $i++) {
+
+
+        Menu::create([
+            'id' => 5,
+            'slug' => 'classic-kitchens',
+            'image' => '../../assets/img-temp/425x250/img5.png',
+            'parent_id' => 2,
+        ]);
+        Menu::create([
+            'id' => 6,
+            'slug' => 'modern-kitchens',
+            'image' => '../../assets/img-temp/425x250/img1.png',
+            'parent_id' => 2,
+        ]);
+
+        for ($i = 7; $i <= 15; $i++) {
             Menu::create([
                 'id' => $i,
                 'slug' => 'category' . $i,

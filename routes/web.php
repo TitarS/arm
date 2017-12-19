@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/*Route::get('/', function () {
-    return view('layouts');
-});*/
-
 Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function() {
 
     Route::get('/register', 'AuthController@registerForm');
@@ -28,12 +23,22 @@ Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function(
     });
 });
 
-
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function() {
     Route::get('/', 'HomeController@index');
-    Route::get('/accessories', 'GalleryController@index');
-    Route::get('/accessories/{slug}', 'GalleryController@gallery');
+    Route::get('/accessories', 'GalleryController@accessories');
+    Route::get('/accessories/{slug}', 'GalleryController@accessoriesList');
+    Route::get('/our-works', 'CategoryController@ourWorks');
+    Route::get('/our-works/{slug}', 'CategoryController@ourWorksList');
+
+    Route::get('/contacts', function () {
+        return view('pages.contacts');
+    });
+    Route::get('/about-us', function () {
+        return view('pages.about_us');
+    });
 });
+
+
