@@ -16,6 +16,7 @@ class CategoryController extends Controller
 
     public function ourWorksList($slug) {
 
+        return view('pages.category_list');
     }
 
 }
