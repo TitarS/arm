@@ -11,6 +11,10 @@
 |
 */
 
+/*Route::get('/', function () {
+    return view('layouts');
+});*/
+
 Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function() {
 
     Route::get('/register', 'AuthController@registerForm');
@@ -29,7 +33,7 @@ Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function() {
-    Route::get('/', function () {
-        return view('layouts');
-    });
+    Route::get('/', 'HomeController@index');
+    Route::get('/accessories', 'GalleryController@index');
+    Route::get('/accessories/{slug}', 'GalleryController@gallery');
 });

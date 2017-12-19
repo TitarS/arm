@@ -22,7 +22,7 @@ class CreateMenusTable extends Migration
         });
 
         Schema::create('menu_translations', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->integer('menu_id')->unsigned();
             $table->string('title');
             $table->text('description')->nullable();

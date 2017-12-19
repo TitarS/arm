@@ -8,7 +8,7 @@ use Dimsav\Translatable\Translatable;
 class Menu extends Model
 {
     use Translatable;
-    public $translationModel = 'App\PostTranslation'; //??Працює й без нього??
+    public $translationModel = 'App\MenuTranslation'; //??Працює й без нього??
     protected $fillable = ['slug', 'image'];
     public $translatedAttributes = [
         'title',
@@ -16,7 +16,6 @@ class Menu extends Model
         'text_bottom',
         'text_top'
     ];
-
 
     public function parent()
     {
@@ -28,4 +27,9 @@ class Menu extends Model
         return $this->hasMany(Menu::class, 'parent_id');
     }
 
+    public static function getMenus() {
+        $menus = Menu::where('parent_id', null)->get();
+
+        return $menus;
+    }
 }

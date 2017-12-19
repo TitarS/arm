@@ -48,7 +48,7 @@
                 </button>
                 <!-- End Responsive Toggle Button -->
                 <!-- Logo -->
-                <a href="../../../index-2.html" class="navbar-brand">
+                <a href="/" class="navbar-brand">
                     <img src="../../../assets/img/logo/logo-1.png" alt="Image Description">
                 </a>
                 <!-- End Logo -->
