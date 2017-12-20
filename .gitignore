@@ -12,3 +12,5 @@ yarn-error.log
 .env
 
 /public/assets
+/resources/views/pages
+/resources/views/layouts.blade.php
