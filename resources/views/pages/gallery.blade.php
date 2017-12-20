@@ -10,7 +10,7 @@
                             <article class="u-block-hover u-block-hover--uncroped text-center">
                                 <!-- Article Image -->
                                 <a class="d-block u-block-hover__additional--jump g-mb-10"
-                                   href="/{{LaravelLocalization::getCurrentLocale()}}/{{$currentMenu->slug}}/{{ $menu->slug }}">
+                                   href="{{ route('accessories.show', $menu->slug) }}">
                                     <img class="w-100" src="{{ $menu->image }}" alt="Image Description">
                                 </a>
                                 <!-- End Article Image -->
@@ -18,7 +18,7 @@
                                 <!-- Article Info -->
                                 <h3 class="h5">
                                     <a class="g-color-main g-color-primary--hover g-text-underline--none--hover"
-                                       href="/{{LaravelLocalization::getCurrentLocale()}}/{{$currentMenu->slug}}/{{ $menu->slug }}">{{ $menu->title }}</a>
+                                       href="{{ route('accessories.show', $menu->slug) }}">{{ $menu->title }}</a>
                                 </h3>
                                 <!-- End Article Info -->
                             </article>

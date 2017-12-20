@@ -15,8 +15,10 @@ class CategoryController extends Controller
     }
 
     public function ourWorksList($slug) {
+        $currentMenu = Menu::where('slug', $slug)->firstOrFail();
+        $products = $currentMenu->products()->paginate(2);
 
-        return view('pages.category_list');
+        return view('pages.category_list', compact('currentMenu', 'products'));
     }
 
 }

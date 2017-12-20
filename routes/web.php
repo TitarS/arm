@@ -29,9 +29,10 @@ Route::group([
 ], function() {
     Route::get('/', 'HomeController@index');
     Route::get('/accessories', 'GalleryController@accessories');
-    Route::get('/accessories/{slug}', 'GalleryController@accessoriesList');
+    Route::get('/accessories/{slug}', 'GalleryController@accessoriesList')->name('accessories.show');
     Route::get('/our-works', 'CategoryController@ourWorks');
-    Route::get('/our-works/{slug}', 'CategoryController@ourWorksList');
+    Route::get('/our-works/{slug}', 'CategoryController@ourWorksList')->name('our-works.show');
+    Route::get('/product/{slug}', 'ProductController@show')->name('product.show');
 
     Route::get('/contacts', function () {
         return view('pages.contacts');

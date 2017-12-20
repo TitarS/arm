@@ -32,4 +32,8 @@ class Menu extends Model
 
         return $menus;
     }
+
+    public function products() {
+        return $this->hasMany(Product::class);
+    }
 }

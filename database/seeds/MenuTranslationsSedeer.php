@@ -66,13 +66,7 @@ class MenuTranslationsSedeer extends Seeder
             ]);
         }
 
-
-
-
-
-
         $faker = Faker\Factory::create('ru_RU');
-
         MenuTranslation::create([
             'menu_id' => 1,
             'title' => 'Про нас',
@@ -114,7 +108,6 @@ class MenuTranslationsSedeer extends Seeder
         ]);
 
 
-
         for($k = 7; $k <= 15; $k++) {
             MenuTranslation::create([
                 'menu_id' => $k,
@@ -127,11 +120,7 @@ class MenuTranslationsSedeer extends Seeder
         }
 
 
-
-
-
         $faker = Faker\Factory::create('uk_UA');
-
         MenuTranslation::create([
             'menu_id' => 1,
             'title' => 'Про нас',
@@ -183,35 +172,5 @@ class MenuTranslationsSedeer extends Seeder
                 'locale' => 'uk'
             ]);
         }
-
-
-
-
-
-
-
-/*        for($k = 1; $k <= 8; $k++) {
-            MenuTranslation::create([
-                'menu_id' => $k,
-                'title' => $faker->city,
-                'description' => $faker->realText(),
-                'text_bottom' => $faker->country,
-                'text_top' => $faker->name,
-                'locale' => 'en'
-            ]);
-        }
-
-        $faker = Faker\Factory::create('ru_RU');
-
-        for($k = 1; $k <= 8; $k++) {
-            MenuTranslation::create([
-                'menu_id' => $k,
-                'title' => $faker->city,
-                'description' => $faker->realText(),
-                'text_bottom' => $faker->country,
-                'text_top' => $faker->name,
-                'locale' => 'ru'
-            ]);
-        }*/
     }
 }

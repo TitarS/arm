@@ -6,7 +6,10 @@
             @foreach($subMenus as $menu)
             <div class="col-md-6">
                 <h4>
-                    <a href="/{{LaravelLocalization::getCurrentLocale()}}/{{$currentMenu->slug}}/{{ $menu->slug }}">
+{{--                    <a href="/{{LaravelLocalization::getCurrentLocale()}}/{{$currentMenu->slug}}/{{ $menu->slug }}">
+                        {{ $menu->title }}
+                    </a>--}}
+                    <a href="{{route('our-works.show', $menu->slug)}}">
                         {{ $menu->title }}
                     </a>
                 </h4>
