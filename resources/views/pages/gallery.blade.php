@@ -1,6 +1,6 @@
 @extends('layouts')
 @section('content')
-        <div class="container g-py-200 ">
+        <div class="container g-py-200">
 
             <div class="shortcode-html">
                 <div class="row">

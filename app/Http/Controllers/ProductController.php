@@ -14,6 +14,6 @@ class ProductController extends Controller
             return redirect()->route('product.show', $product->translate()->slug);
         }
 
-        dd($product->title);
+        return view('pages.product', compact('product'));
     }
 }

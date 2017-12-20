@@ -41,5 +41,3 @@ Route::group([
         return view('pages.about_us');
     });
 });
-
-

@@ -18,6 +18,15 @@ class Product extends Model
         'description'
     ];
 
+    public function attributes() {
+        return $this->hasMany(Attribute::class);
+    }
 
+    public function getAttributes() {
+        if($this->attributes()->get()->isNotEmpty()) {
+            return $this->attributes()->get();
+        }
+        return false;
+    }
 
 }
