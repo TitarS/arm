@@ -118,7 +118,7 @@
     <!-- Projects -->
     <section id="projects-section" class="container g-py-100">
         <div class="text-center g-mb-50">
-            <h2 class="h1 g-color-black g-font-weight-600">Branding Projects</h2>
+            <h2 class="h1 g-color-black g-font-weight-600 myclass_st">Branding Projects</h2>
             <p class="lead">This is where we begin to visualize your napkin sketches and make them into pixels.</p>
         </div>
 

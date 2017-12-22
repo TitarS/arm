@@ -30,7 +30,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->text('content')->nullable();
             $table->text('content_top')->nullable();
-            $table->text('description')->nullable();
+            $table->mediumText('description')->nullable();
             $table->string('locale')->index();
             $table->unique(['product_id', 'locale']);
             $table->foreign('product_id')->references('id')

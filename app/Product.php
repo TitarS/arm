@@ -22,11 +22,24 @@ class Product extends Model
         return $this->hasMany(Attribute::class);
     }
 
+    public function images() {
+        return $this->hasMany(Image::class);
+    }
+
+    public function hasAttributes() {
+        return $this->attributes()->first() != null ? true : false;
+    }
+
     public function getAttributes() {
-        if($this->attributes()->get()->isNotEmpty()) {
-            return $this->attributes()->get();
-        }
-        return false;
+        return $this->attributes()->get();
+    }
+
+    public function hasImages() {
+        return $this->images()->first() != null ? true : false;
+    }
+
+    public function getImages() {
+        return $this->images()->get();
     }
 
 }

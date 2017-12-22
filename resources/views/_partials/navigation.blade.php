@@ -4,7 +4,7 @@
         @foreach($menus as $menu)
             @if(isset($currentMenu) && ($currentMenu->id == $menu->id) )
             <li class="nav-item g-mx-20--lg active">
-                <a href="/{{LaravelLocalization::getCurrentLocale()}}/{{ $menu->slug }}" class="nav-link px-0">
+                <a href="#" class="nav-link px-0">
                     {{ $menu->title }}
                     <span class="sr-only">(current)</span>
                 </a>

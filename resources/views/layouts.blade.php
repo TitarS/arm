@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="../../../assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="../../../assets/vendor/slick-carousel/slick/slick.css">
     <link rel="stylesheet" href="../../../assets/vendor/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="/css/myStyle.css">
 
     <!-- CSS Unify -->
     <link rel="stylesheet" href="../../../assets/css/unify-core.css">

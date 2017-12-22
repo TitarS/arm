@@ -13,10 +13,11 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('products')->delete();
+        $faker = Faker\Factory::create();
         for ($i = 1; $i <= 3; $i++) {
             Product::create([
                 'menu_id' => '5',
-                'image_main' => '../../assets/img-temp/740x380/img1.jpg'
+                'image_main' => $faker->imageUrl('760', '400')
             ]);
         }
 
