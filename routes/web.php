@@ -36,8 +36,10 @@ Route::group([
 
     Route::get('/contacts', function () {
         return view('pages.contacts');
-    });
+    })->name('contacts');
     Route::get('/about-us', function () {
         return view('pages.about_us');
     });
 });
+
+Route::post('/customer', 'CustomersController@contact')->name('customers');

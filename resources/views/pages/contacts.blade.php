@@ -12,37 +12,47 @@
         <section class="container g-pt-100 g-pb-40">
             <div class="row justify-content-between">
                 <div class="col-md-7 g-mb-60">
+                    @include('admin.errors')
+                    @if(session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <!-- Contact Form -->
-                    <form>
+                    {{ Form::open([
+                    'route' => 'customers'
+                    ]) }}
+                        <input type="hidden" name="mission" value="Связаться со мной">
                         <div class="row">
-                            <div class="col-md-6 form-group g-mb-20">
+                            <div class="col-md-12 form-group g-mb-20">
                                 <label class="g-color-gray-dark-v2 g-font-size-13">Name:</label>
-                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text">
+                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15"
+                                       type="text" name="name" value="{{ old('name') }}">
                             </div>
 
                             <div class="col-md-6 form-group g-mb-20">
                                 <label class="g-color-gray-dark-v2 g-font-size-13">Email:</label>
-                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="email">
-                            </div>
-
-                            <div class="col-md-6 form-group g-mb-20">
-                                <label class="g-color-gray-dark-v2 g-font-size-13">Subject:</label>
-                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text">
+                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15"
+                                       type="text" name="email" value="{{ old('email') }}">
                             </div>
 
                             <div class="col-md-6 form-group g-mb-20">
                                 <label class="g-color-gray-dark-v2 g-font-size-13">Phone:</label>
-                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="tel">
+                                <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15"
+                                       type="tel" name="contact_number" value="{{ old('contact_number') }}">
                             </div>
 
                             <div class="col-md-12 form-group g-mb-40">
                                 <label class="g-color-gray-dark-v2 g-font-size-13">Message:</label>
-                                <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" rows="7"></textarea>
+                                <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15"
+                                          rows="7" name="message" value="{{ old('message') }}"></textarea>
                             </div>
                         </div>
 
-                        <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20" type="submit" role="button">Send Enquiry</button>
-                    </form>
+                        <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20"
+                                type="submit" role="button">Send Enquiry
+                        </button>
+                    {{ Form::close() }}
                     <!-- End Contact Form -->
                 </div>
 

@@ -171,6 +171,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
+        Propaganistas\LaravelPhone\PhoneServiceProvider::class,
         /*
          * Application Service Providers...
          */

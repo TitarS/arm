@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AttributesSeeder::class);
         $this->call(AttributeTranslationsSeeder::class);
         $this->call(ImagesSeeder::class);
+        $this->call(CustomersSeeder::class);
     }
 }
