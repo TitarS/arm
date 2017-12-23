@@ -42,4 +42,5 @@ Route::group([
     });
 });
 
-Route::post('/customer', 'CustomersController@contact')->name('customers');
+Route::post('/customers-contact', 'CustomersController@contact')->name('customers.contact');
+Route::post('/customers-calculate', 'CustomersController@calculate')->name('customers.calculate');
