@@ -1,5 +1,5 @@
 <?php
-
+use App\Menu;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +28,7 @@ Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function() {
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index')->name('home');
     Route::get('/accessories', 'GalleryController@accessories');
     Route::get('/accessories/{slug}', 'GalleryController@accessoriesList')->name('accessories.show');
     Route::get('/our-works', 'CategoryController@ourWorks');
@@ -36,10 +36,13 @@ Route::group([
     Route::get('/product/{slug}', 'ProductController@show')->name('product.show');
 
     Route::get('/contacts', function () {
-        return view('pages.contacts');
+        $currentMenu = Menu::where('slug', 'contacts')->firstOrFail();
+        return view('pages.contacts', compact('currentMenu'));
     })->name('contacts');
+
     Route::get('/about-us', function () {
-        return view('pages.about_us');
+        $currentMenu = Menu::where('slug', 'about-us')->firstOrFail();
+        return view('pages.about_us', compact('currentMenu'));
     });
 });
 

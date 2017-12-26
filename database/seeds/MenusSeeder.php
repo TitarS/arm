@@ -49,7 +49,7 @@ class MenusSeeder extends Seeder
             Menu::create([
                 'id' => $i,
                 'slug' => 'category' . $i,
-                'image' => '../../assets/img-temp/425x250/img10.png',
+                'image' => '/assets/images/products/classic/claire/1.jpg',
                 'parent_id' => 3,
             ]);
         }
