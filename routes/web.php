@@ -20,6 +20,7 @@ Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function(
 
     Route::group(['middleware' => ['admin']], function() {
         Route::get('/', 'DashboardController@index')->name('admin.index');
+        Route::resource('/products', 'ProductController');
     });
 });
 
@@ -44,3 +45,4 @@ Route::group([
 
 Route::post('/customers-contact', 'CustomersController@contact')->name('customers.contact');
 Route::post('/customers-calculate', 'CustomersController@calculate')->name('customers.calculate');
+Route::post('/customers-callback', 'CustomersController@callback')->name('customers.callback');

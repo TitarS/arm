@@ -37,6 +37,10 @@ class CustomersController extends Controller
         \Mail::to($customer)->send(new CustomerEmail($customer));
 
         return redirect()->back()->with('status', trans('status.contact_sent'));
+    }
 
+    public function callback(Request $request) {
+        dd($request->all());
+        return redirect()->back()->with('status', trans('status.contact_sent'));
     }
 }
