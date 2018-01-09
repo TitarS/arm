@@ -15,7 +15,10 @@ class ProductTranslation extends Model
         'slug',
         'content',
         'content_top',
-        'description'
+        'description',
+        'count_days',
+        'material',
+        'warranty'
     ];
 
     public function sluggable()

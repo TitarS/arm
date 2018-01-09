@@ -35,21 +35,49 @@ class MenusSeeder extends Seeder
         Menu::create([
             'id' => 5,
             'slug' => 'classic-kitchens',
-            'image' => '../../assets/img-temp/425x250/img5.png',
+            'image' => '/images/categories/claire.jpg',
             'parent_id' => 2,
         ]);
         Menu::create([
             'id' => 6,
             'slug' => 'modern-kitchens',
-            'image' => '../../assets/img-temp/425x250/img1.png',
+            'image' => '/images/categories/mircella.JPG',
             'parent_id' => 2,
         ]);
 
-        for ($i = 7; $i <= 15; $i++) {
+        $image = [
+            'Drawers.jpg',
+            'Cargo.jpg',
+            'Trays.jpg',
+            'Sinks.jpeg',
+            'Lifts.jpg',
+            'Backlight.jpg',
+            'Cornices.jpg',
+            'Decors.jpg',
+            'Drying.jpg',
+            'Technique.jpeg',
+            'Facades.jpeg',
+            'Countertops.jpg'
+        ];
+        $name = [
+            'drawers',
+            'cargo',
+            'trays',
+            'sinks',
+            'lifts',
+            'backlight',
+            'cornices',
+            'decors',
+            'drying',
+            'technique',
+            'facades',
+            'countertops'
+        ];
+        for ($i = 7; $i <= 18; $i++) {
             Menu::create([
                 'id' => $i,
-                'slug' => 'category' . $i,
-                'image' => '/assets/images/products/classic/claire/1.jpg',
+                'slug' => $name[$i - 7],
+                'image' => '/images/categories/' . $image[$i - 7],
                 'parent_id' => 3,
             ]);
         }

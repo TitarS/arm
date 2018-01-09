@@ -13,13 +13,28 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('products')->delete();
-        $faker = Faker\Factory::create();
-        for ($i = 1; $i <= 3; $i++) {
             Product::create([
                 'menu_id' => '5',
-                'image_main' => $faker->imageUrl('760', '400')
+                'image_main' => '/images/products/classic-kitchens/elizabeth/elizabeth.jpg',
+                'video' => 'http://www.youtube.com/embed/Agel6lP6BaM'
             ]);
-        }
+            Product::create([
+                'menu_id' => '5',
+                'image_main' => '/images/products/classic-kitchens/claire/claire.JPG',
+                'link_360' => '/360-tour/Claire',
+                'video' => 'http://www.youtube.com/embed/eJ9dJEqmQ5s'
+            ]);
+            Product::create([
+                'menu_id' => '6',
+                'image_main' => '/images/products/modern-kitchens/mircella/mircella.JPG',
+                'video' => 'http://www.youtube.com/embed/COYxcwXotZ8'
+            ]);
+            Product::create([
+                'menu_id' => '6',
+                'image_main' => '/images/products/modern-kitchens/heidi/heidi.JPG',
+                'link_360' => '/360-tour/Heidi',
+                'video' => 'http://www.youtube.com/embed/banYhAdIUOk'
+            ]);
 
     }
 }

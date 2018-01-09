@@ -14,7 +14,7 @@ class AttributesSeeder extends Seeder
     {
         DB::table('attributes')->delete();
 
-        for($i = 1; $i <= 5; $i++) {
+        for($i = 1; $i <= 4; $i++) {
             Attribute::create([
                 'product_id' => '1'
             ]);

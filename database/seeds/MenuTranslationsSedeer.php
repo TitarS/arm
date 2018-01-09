@@ -14,29 +14,24 @@ class MenuTranslationsSedeer extends Seeder
     {
         DB::table('menu_translations')->delete();
 
-        $faker = Faker\Factory::create();
         MenuTranslation::create([
             'menu_id' => 1,
             'title' => 'About us',
-            'description' => $faker->realText(),
             'locale' => 'en'
         ]);
         MenuTranslation::create([
             'menu_id' => 2,
             'title' => 'Our works',
-            'description' => $faker->realText(),
             'locale' => 'en'
         ]);
         MenuTranslation::create([
             'menu_id' => 3,
             'title' => 'Accessories',
-            'description' => $faker->realText(),
             'locale' => 'en'
         ]);
         MenuTranslation::create([
             'menu_id' => 4,
             'title' => 'Contacts',
-            'description' => $faker->realText(),
             'locale' => 'en'
         ]);
 
@@ -44,51 +39,59 @@ class MenuTranslationsSedeer extends Seeder
         MenuTranslation::create([
             'menu_id' => 5,
             'title' => 'Classic kitchens',
-            'description' => $faker->realText(),
+            'description' => 'Classic style is the embodiment of comfort and respectability. The design of the classic cuisine has certain rules. It is characterized by symmetry, harmony and natural materials both in the design of the kitchen set itself, and when decorating the room.',
             'locale' => 'en'
         ]);
 
         MenuTranslation::create([
             'menu_id' => 6,
             'title' => 'Modern kitchens',
-            'description' => $faker->realText(),
+            'description' => 'The main thing in modern kitchen is convenience. Thanks to new ideas of architects and furniture designers, as well as developers of kitchen equipment, cooking becomes easier and more enjoyable.',
             'locale' => 'en'
         ]);
 
-        for($k = 7; $k <= 15; $k++) {
+
+        $name = [
+            'Drawers',
+            'Cargo',
+            'Trays',
+            'Sinks',
+            'Lifts',
+            'Backlight',
+            'Cornices',
+            'Decors',
+            'Drying',
+            'Technique',
+            'Facades',
+            'Countertops'
+        ];
+
+        for($k = 7; $k <= 18; $k++) {
             MenuTranslation::create([
                 'menu_id' => $k,
-                'title' => $faker->city,
-                'description' => $faker->realText(),
-                'text_bottom' => $faker->country,
-                'text_top' => $faker->name,
+                'title' => $name[$k-7],
                 'locale' => 'en'
             ]);
         }
 
-        $faker = Faker\Factory::create('ru_RU');
         MenuTranslation::create([
             'menu_id' => 1,
             'title' => 'Про нас',
-            'description' => $faker->realText(),
             'locale' => 'ru'
         ]);
         MenuTranslation::create([
             'menu_id' => 2,
             'title' => 'Наши работы',
-            'description' => $faker->realText(),
             'locale' => 'ru'
         ]);
         MenuTranslation::create([
             'menu_id' => 3,
             'title' => 'Комплектующие',
-            'description' => $faker->realText(),
             'locale' => 'ru'
         ]);
         MenuTranslation::create([
             'menu_id' => 4,
             'title' => 'Контакты',
-            'description' => $faker->realText(),
             'locale' => 'ru'
         ]);
 
@@ -96,53 +99,58 @@ class MenuTranslationsSedeer extends Seeder
         MenuTranslation::create([
             'menu_id' => 5,
             'title' => 'Классические кухни',
-            'description' => $faker->realText(),
+            'description' => 'Классический стиль — это воплощение комфорта и респектабельности. Дизайн классической кухни имеет определенные правила. Для него характерны симметрия, гармония и натуральные материалы как в оформлении самого кухонного гарнитура, так и при оформлении декора помещения.',
             'locale' => 'ru'
         ]);
 
         MenuTranslation::create([
             'menu_id' => 6,
             'title' => 'Кухни модерн',
-            'description' => $faker->realText(),
+            'description' => 'Главное в современной кухне – это удобство. Благодаря новым идеям архитекторов и дизайнеров мебели, а также разработчиков кухонного оборудования приготовление еды становится более легким и приятным.',
             'locale' => 'ru'
         ]);
 
+        $name = [
+            'Выдвижные ящики',
+            'Карго',
+            'Лотки',
+            'Мойки',
+            'Подъемники',
+            'Подсветка',
+            'Карнизы',
+            'Декоры',
+            'Сушки',
+            'Техника',
+            'Фасады',
+            'Столешницы',
+        ];
 
-        for($k = 7; $k <= 15; $k++) {
+        for($k = 7; $k <= 18; $k++) {
             MenuTranslation::create([
                 'menu_id' => $k,
-                'title' => $faker->city,
-                'description' => $faker->realText(),
-                'text_bottom' => $faker->country,
-                'text_top' => $faker->name,
+                'title' => $name[$k-7],
                 'locale' => 'ru'
             ]);
         }
 
-
-        $faker = Faker\Factory::create('uk_UA');
         MenuTranslation::create([
             'menu_id' => 1,
             'title' => 'Про нас',
-            'description' => $faker->realText(),
             'locale' => 'uk'
         ]);
         MenuTranslation::create([
             'menu_id' => 2,
             'title' => 'Наші роботи',
-            'description' => $faker->realText(),
             'locale' => 'uk'
         ]);
         MenuTranslation::create([
             'menu_id' => 3,
             'title' => 'Комплектуючі',
-            'description' => $faker->realText(),
             'locale' => 'uk'
         ]);
         MenuTranslation::create([
             'menu_id' => 4,
             'title' => 'Контакти',
-            'description' => $faker->realText(),
             'locale' => 'uk'
         ]);
 
@@ -150,25 +158,35 @@ class MenuTranslationsSedeer extends Seeder
         MenuTranslation::create([
             'menu_id' => 5,
             'title' => 'Класичні кухні',
-            'description' => $faker->realText(),
+            'description' => 'Класичний стиль - це втілення комфорту і респектабельності. Дизайн класичної кухні має певні правила. Для нього характерні симетрія, гармонія і натуральні матеріали, як в оформленні самого кухонного гарнітура, так і при оформленні декору приміщення.',
             'locale' => 'uk'
         ]);
 
         MenuTranslation::create([
             'menu_id' => 6,
             'title' => 'Кухні модерн',
-            'description' => $faker->realText(),
+            'description' => 'Головне в сучасній кухні - це зручність. Завдяки новим ідеям архітекторів і дизайнерів меблів, а також розробників кухонного обладнання приготування їжі стає більш легким і приємним.',
             'locale' => 'uk'
         ]);
 
-
-        for($k = 7; $k <= 15; $k++) {
+        $name = [
+            'Висувні ящики',
+            'Карго',
+            'Лотки',
+            'Мийка',
+            'Підйомники',
+            'Підсвічування',
+            'Карнизи',
+            'Декори',
+            'Сушки',
+            'Техніка',
+            'Фасади',
+            'Стільниці'
+        ];
+        for($k = 7; $k <= 18; $k++) {
             MenuTranslation::create([
                 'menu_id' => $k,
-                'title' => $faker->city,
-                'description' => $faker->realText(),
-                'text_bottom' => $faker->country,
-                'text_top' => $faker->name,
+                'title' => $name[$k-7],
                 'locale' => 'uk'
             ]);
         }

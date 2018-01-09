@@ -1742,7 +1742,9 @@ div.DTFC_RightBodyWrapper table.dataTable thead .sorting_desc:after {
 div.FixedHeader_Cloned table {
 	margin: 0 !important
 }
-
+.prod {
+	padding: 0px!important;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);/*!
  *   AdminLTE v2.3.7

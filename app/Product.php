@@ -15,7 +15,10 @@ class Product extends Model
         'slug',
         'content',
         'content_top',
-        'description'
+        'description',
+        'count_days',
+        'material',
+        'warranty'
     ];
 
     public function attributes() {
@@ -26,12 +29,24 @@ class Product extends Model
         return $this->hasMany(Image::class);
     }
 
+    public function menu() {
+        return $this->belongsTo(Menu::class);
+    }
+
     public function hasAttributes() {
         return $this->attributes()->first() != null ? true : false;
     }
 
     public function getAttributes() {
         return $this->attributes()->get();
+    }
+
+    public function hasVideo() {
+        return $this->video != null ? true : false;
+    }
+
+    public function hasTour() {
+        return $this->link_360 != null ? true : false;
     }
 
     public function hasImages() {

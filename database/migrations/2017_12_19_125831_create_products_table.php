@@ -31,6 +31,9 @@ class CreateProductsTable extends Migration
             $table->text('content')->nullable();
             $table->text('content_top')->nullable();
             $table->mediumText('description')->nullable();
+            $table->string('count_days')->nullable();
+            $table->string('material')->nullable();
+            $table->string('warranty')->nullable();
             $table->string('locale')->index();
             $table->unique(['product_id', 'locale']);
             $table->foreign('product_id')->references('id')
