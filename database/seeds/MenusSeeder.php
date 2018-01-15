@@ -35,13 +35,13 @@ class MenusSeeder extends Seeder
         Menu::create([
             'id' => 5,
             'slug' => 'classic-kitchens',
-            'image' => '/images/categories/claire.jpg',
+            'image' => '/images/categories/classic-kitchens.jpg',
             'parent_id' => 2,
         ]);
         Menu::create([
             'id' => 6,
             'slug' => 'modern-kitchens',
-            'image' => '/images/categories/mircella.JPG',
+            'image' => '/images/categories/modern-kitchens.jpg',
             'parent_id' => 2,
         ]);
 

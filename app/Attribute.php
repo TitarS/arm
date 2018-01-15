@@ -16,4 +16,13 @@ class Attribute extends Model
         'value'
     ];
 
+    public static function add($name, $value, $locale, $id) {
+        $attribute = new static;
+        $attribute->name = $name;
+        $attribute->value = $value;
+        $attribute->locale = $locale;
+        $attribute->post_id = $id;
+        $attribute->save();
+    }
+
 }

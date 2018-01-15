@@ -57,4 +57,9 @@ class Product extends Model
         return $this->images()->get();
     }
 
+    public function addAttribute($attributes) {
+        foreach ($attributes as $attribute) {
+            Attribute::add($attribute[0], $attribute[1], $attribute[2], $this->id);
+        }
+    }
 }

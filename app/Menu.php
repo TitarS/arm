@@ -33,6 +33,12 @@ class Menu extends Model
         return $menus;
     }
 
+    public static function getAllMenus() {
+        $menus = Menu::all()->pluck('title', 'id')->all();
+
+        return $menus;
+    }
+
     public function products() {
         return $this->hasMany(Product::class);
     }
