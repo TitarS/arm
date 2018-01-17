@@ -5,42 +5,66 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Mail\CustomerEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CustomersController extends Controller
 {
     public function contact(Request $request) {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:customers',
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3|max:200',
+            'email' => 'required|email',
             'contact_number' => 'phone:US,UA,RU'
         ]);
-        $customer = Customer::add($request->all());
+        if($validator->passes()) {
+            $customer = Customer::add($request->all());
+            \Mail::to($customer)->send(new CustomerEmail($customer));
 
-        \Mail::to($customer)->send(new CustomerEmail($customer));
+            return response()->json(['success' => trans('status.contact_sent')]);
+        }
 
-        return redirect()->route('contacts')->with('status', trans('status.contact_sent'));
+        return response()->json(['error' => $validator->errors()->all()]);
     }
 
     public function calculate(Request $request) {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:customers',
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3|max:200',
+            'email' => 'required|email',
             'contact_number' => 'required|phone:UA,ES,RU',
-            'message' => 'required'
+            'image' => 'nullable|mimes:jpeg,jpg,png|max:2000'
         ]);
-        $customer = Customer::add($request->all());
-        $customer->uploadImage(
-            $request->file('image'),
-            $request->get('email')
+
+        if($validator->passes()) {
+            $customer = Customer::add($request->all());
+            $customer->uploadImage(
+                $request->file('image'),
+                $request->get('email')
             );
+            \Mail::to($customer)->send(new CustomerEmail($customer));
 
-        \Mail::to($customer)->send(new CustomerEmail($customer));
+            return response()->json(['success' => trans('status.contact_sent')]);
+        }
 
-        return redirect()->back()->with('status', trans('status.contact_sent'));
+        return response()->json(['error' => $validator->errors()->all()]);
+
+    /*        return redirect()->back()
+                ->with('status', trans('status.contact_sent'));*/
     }
 
     public function callback(Request $request) {
-        dd($request->all());
-        return redirect()->back()->with('status', trans('status.contact_sent'));
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3|max:200',
+            'email' => 'required|email',
+            'contact_number' => 'required|phone:UA,ES,RU',
+        ]);
+
+        if($validator->passes()) {
+            $customer = Customer::add($request->all());
+            \Mail::to($customer)->send(new CustomerEmail($customer));
+
+            return response()->json(['success' => trans('status.contact_sent')]);
+            //return redirect()->back()->with('status', trans('status.contact_sent'));
+        }
+
+        return response()->json(['error' => $validator->errors()->all()]);
     }
 }

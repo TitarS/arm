@@ -17,11 +17,11 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('contact_number')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->text('message')->nullable();
             $table->string('mission');
             $table->string('image')->nullable();
-            $table->date('date')->nullable();
+            $table->dateTime('date')->nullable();
             $table->timestamps();
         });
     }

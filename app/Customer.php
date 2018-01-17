@@ -27,7 +27,8 @@ class Customer extends Model
         if($image == null) {
             return;
         }
-        $filename = $image->getClientOriginalName();
+        $filename = str_random(10) . '.' . $image->getClientOriginalExtension();
+        //$filename = $image->getClientOriginalName();
         $image->storeAs('uploads/customers/' . $email, $filename);
         $this->image = $filename;
         $this->save();
