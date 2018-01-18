@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Mail\CustomerEmail;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+//use Illuminate\Support\Facades\Validator;
+use Validator;
 
 class CustomersController extends Controller
 {
@@ -29,8 +30,8 @@ class CustomersController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3|max:200',
             'email' => 'required|email',
-            'contact_number' => 'required|phone:UA,ES,RU',
-            'image' => 'nullable|mimes:jpeg,jpg,png|max:2000'
+            'contact_number' => 'phone:UA,ES,RU'/*,
+            'image' => 'nullable|image'*/
         ]);
 
         if($validator->passes()) {
@@ -45,7 +46,6 @@ class CustomersController extends Controller
         }
 
         return response()->json(['error' => $validator->errors()->all()]);
-
     /*        return redirect()->back()
                 ->with('status', trans('status.contact_sent'));*/
     }
@@ -62,7 +62,6 @@ class CustomersController extends Controller
             \Mail::to($customer)->send(new CustomerEmail($customer));
 
             return response()->json(['success' => trans('status.contact_sent')]);
-            //return redirect()->back()->with('status', trans('status.contact_sent'));
         }
 
         return response()->json(['error' => $validator->errors()->all()]);

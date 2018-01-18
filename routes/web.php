@@ -29,9 +29,9 @@ Route::group([
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function() {
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/accessories', 'GalleryController@accessories');
+    Route::get('/accessories', 'GalleryController@accessories')->name('accessories.index');;
     Route::get('/accessories/{slug}', 'GalleryController@accessoriesList')->name('accessories.show');
-    Route::get('/our-works', 'CategoryController@ourWorks');
+    Route::get('/our-works', 'CategoryController@ourWorks')->name('our-works.index');
     Route::get('/our-works/{slug}', 'CategoryController@ourWorksList')->name('our-works.show');
     Route::get('/product/{slug}', 'ProductController@show')->name('product.show');
 
@@ -43,7 +43,7 @@ Route::group([
     Route::get('/about-us', function () {
         $currentMenu = Menu::where('slug', 'about-us')->firstOrFail();
         return view('pages.about_us', compact('currentMenu'));
-    });
+    })->name('about');
 });
 
 Route::post('/customers-contact', 'CustomersController@contact')->name('customers.contact');
