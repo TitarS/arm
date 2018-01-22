@@ -42,4 +42,8 @@ class Menu extends Model
     public function products() {
         return $this->hasMany(Product::class);
     }
+
+    public function getUrl() {
+        return env('APP_URL') . '/' . \App::getLocale() . '/' . $this->slug;
+    }
 }
