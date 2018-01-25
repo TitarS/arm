@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
 
+    protected $fillable = ['product_id', 'name'];
+
+    public function getProductImage() {
+        return '/images/products/' . $this->name;
+    }
 }

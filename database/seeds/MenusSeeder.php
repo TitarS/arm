@@ -46,30 +46,31 @@ class MenusSeeder extends Seeder
         ]);
 
         $image = [
+
+            'Lifts.jpg',
             'Drawers.jpg',
             'Cargo.jpg',
+            'Drying.jpg',
+            'Backlight.jpg',
+            'Technique.jpeg',
             'Trays.jpg',
             'Sinks.jpeg',
-            'Lifts.jpg',
-            'Backlight.jpg',
             'Cornices.jpg',
             'Decors.jpg',
-            'Drying.jpg',
-            'Technique.jpeg',
             'Facades.jpeg',
             'Countertops.jpg'
         ];
         $name = [
+            'lifts',
             'drawers',
             'cargo',
+            'drying',
+            'backlight',
+            'technique',
             'trays',
             'sinks',
-            'lifts',
-            'backlight',
             'cornices',
             'decors',
-            'drying',
-            'technique',
             'facades',
             'countertops'
         ];

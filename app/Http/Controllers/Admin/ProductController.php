@@ -10,24 +10,36 @@ use App\Http\Controllers\Controller;
 class ProductController extends Controller
 {
     public function index() {
-        $products = Product::whereIn('menu_id', [5, 6])->get();
+        $menus = Menu::find(2)->children->pluck('id')->all();
+        $products = Product::whereIn('menu_id', $menus)->get();
+
         return view('admin.products.index', compact('products'));
     }
 
-    public function show($id) {
+    public function edit($id) {
         $product = Product::find($id)->get();
         return view('admin.products.edit', compact('product'));
     }
 
     public function create() {
-        $categories = Menu::getAllMenus();
+        //$categories = Menu::getAllMenus();
+        $categories = Menu::getProductsMenu();
         return view('admin.products.create', compact('categories'));
     }
 
     public function store(Request $request) {
-        dd($request->all());
 
-        //$product = Product::add($request->all());
+        //dd($request->get('attributes'));
+        $product = Product::add($request->all());
+        $product->uploadImage('images/products/kitchens', $request->file('image_main'));
+        $product->setCategory($request->get('menu_id'));
+        $product->toggleStatus($request->get('status'));
+        $product->save();
+        //$product->addAttribute($request->get('attributes'));
+        $product->uploadAlbum($request->images);
+
+
+        return redirect()->back();
         //$product->addAttribute($request->get('attributes'));
     }
 }

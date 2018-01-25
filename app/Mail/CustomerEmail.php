@@ -30,12 +30,11 @@ class CustomerEmail extends Mailable
      */
     public function build()
     {
-        if(count($this->customer->email) && count($this->customer->name)) {
-            $this->from($this->customer->email, $this->customer->name);
-
+/*        if(count($this->customer->email) && count($this->customer->name)) {
             return $this->view('emails.customers')
-                ->subject($this->customer->mission);
-        }
+                ->subject($this->customer->mission)
+                ->from($this->customer->email, $this->customer->name);;
+        }*/
         return $this->view('emails.customers')
             ->subject($this->customer->mission);
     }

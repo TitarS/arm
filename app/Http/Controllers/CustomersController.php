@@ -20,10 +20,6 @@ class CustomersController extends Controller
             $customer = Customer::add($request->all());
             /*\Mail::to($customer)->send(new CustomerEmail($customer));*/
             \Mail::to(env('MAIL_TO_ADDRESS'))->send(new CustomerEmail($customer));
-/*            \Mail::send('emails.customers', ['customer' => $request], function($message) use ($request) {
-                $message->from($request->email, $request->name);
-                $message->to(env('MAIL_TO_ADDRESS'));
-            });*/
 
             return response()->json(['success' => trans('status.contact_sent')]);
         }
@@ -52,14 +48,14 @@ class CustomersController extends Controller
         }
 
         return response()->json(['error' => $validator->errors()->all()]);
-        /*        return redirect()->back()
-                    ->with('status', trans('status.contact_sent'));*/
+    /*        return redirect()->back()
+                ->with('status', trans('status.contact_sent'));*/
     }
 
     public function callback(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3|max:200',
-            'contact_number' => 'required|phone:UA,ES,RU',
+            'contact_number' => 'required|phone:UA,ES,RU'
         ]);
 
         if($validator->passes()) {

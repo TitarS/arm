@@ -52,16 +52,16 @@ class MenuTranslationsSedeer extends Seeder
 
 
         $name = [
+            'Lifts',
             'Drawers',
             'Cargo',
+            'Drying',
+            'Backlight',
+            'Technique',
             'Trays',
             'Sinks',
-            'Lifts',
-            'Backlight',
             'Cornices',
             'Decors',
-            'Drying',
-            'Technique',
             'Facades',
             'Countertops'
         ];
@@ -111,16 +111,16 @@ class MenuTranslationsSedeer extends Seeder
         ]);
 
         $name = [
+            'Подъемники',
             'Выдвижные ящики',
             'Карго',
+            'Сушки',
+            'Подсветка',
+            'Техника',
             'Лотки',
             'Мойки',
-            'Подъемники',
-            'Подсветка',
             'Карнизы',
             'Декоры',
-            'Сушки',
-            'Техника',
             'Фасады',
             'Столешницы',
         ];
@@ -170,16 +170,16 @@ class MenuTranslationsSedeer extends Seeder
         ]);
 
         $name = [
+            'Підйомники',
             'Висувні ящики',
             'Карго',
+            'Сушки',
+            'Підсвічування',
+            'Техніка',
             'Лотки',
             'Мийка',
-            'Підйомники',
-            'Підсвічування',
             'Карнизи',
             'Декори',
-            'Сушки',
-            'Техніка',
             'Фасади',
             'Стільниці'
         ];

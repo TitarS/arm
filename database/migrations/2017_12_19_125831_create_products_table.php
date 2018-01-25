@@ -15,9 +15,9 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('menu_id');
+            $table->string('menu_id')->nullable();
             $table->integer('status')->default(1);
-            $table->string('image_main');
+            $table->string('image_main')->nullable();
             $table->string('video')->nullable();
             $table->string('link_360')->nullable();
             $table->timestamps();

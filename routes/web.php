@@ -21,6 +21,7 @@ Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function(
     Route::group(['middleware' => ['admin']], function() {
         Route::get('/', 'DashboardController@index')->name('admin.index');
         Route::resource('/products', 'ProductController');
+        Route::resource('/galleries', 'GalleryController');
     });
 });
 
@@ -29,8 +30,12 @@ Route::group([
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function() {
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/accessories', 'GalleryController@accessories')->name('accessories.index');;
-    Route::get('/accessories/{slug}', 'GalleryController@accessoriesList')->name('accessories.show');
+ /*   Route::get('/accessories', 'GalleryController@accessories')->name('accessories.index');;
+    Route::get('/accessories/{slug}', 'GalleryController@accessoriesList')->name('accessories.show');*/
+
+   Route::get('/accessories', 'CategoryController@accessories')->name('accessories.index');;
+   Route::get('/accessories/{slug}', 'CategoryController@accessoriesList')->name('accessories.show');
+
     Route::get('/our-works', 'CategoryController@ourWorks')->name('our-works.index');
     Route::get('/our-works/{slug}', 'CategoryController@ourWorksList')->name('our-works.show');
     Route::get('/product/{slug}', 'ProductController@show')->name('product.show');

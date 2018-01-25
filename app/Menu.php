@@ -39,6 +39,18 @@ class Menu extends Model
         return $menus;
     }
 
+    public static function getProductsMenu() {
+        $menus = Menu::find(2)->children->pluck('title', 'id')->all();//->
+
+        return $menus;
+    }
+
+    public static function getGalleriesMenu() {
+        $menus = Menu::find(3)->children->pluck('title', 'id')->all();//->
+
+        return $menus;
+    }
+
     public function products() {
         return $this->hasMany(Product::class);
     }
