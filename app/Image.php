@@ -9,7 +9,7 @@ class Image extends Model
 
     protected $fillable = ['product_id', 'name'];
 
-    public function getProductImage() {
-        return '/images/products/' . $this->name;
+    public function getProductKitchenImage() {
+        return '/images/products/kitchens/' . $this->name;
     }
 }

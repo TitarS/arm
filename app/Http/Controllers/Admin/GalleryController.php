@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class GalleryController extends Controller
 {
     public function index() {
-        $menus = Menu::find(3)->children->pluck('id')->all();
+        $menus = Menu::findOrFail(3)->children->pluck('id')->all();
         $products = Product::whereIn('menu_id', $menus)->get();
 
         return view('admin.galleries.index', compact('products'));
@@ -50,12 +50,27 @@ class GalleryController extends Controller
             ));
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, $id) {
         $this->validate($request, [
             'ru.title' => 'required',
-            'ua.title' => 'required',
+            'uk.title' => 'required',
             'en.title' => 'required'
         ]);
+
+        $product = Product::where("id", $id)->first();
+        $product->edit($request->all());
+        $product->uploadImage('images/products/accessories/', $request->file('image_main'));
+        $product->setCategory($request->menu_id);
+        $product->toggleStatus($request->status);
+        $product->save();
+
+        return redirect()->route('galleries.index');
+    }
+
+    public function destroy($id) {
+        Product::find($id)->remove('images/products/accessories/');
+
+        return redirect()->route('galleries.index');
     }
 
 }

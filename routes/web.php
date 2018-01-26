@@ -32,7 +32,6 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
  /*   Route::get('/accessories', 'GalleryController@accessories')->name('accessories.index');;
     Route::get('/accessories/{slug}', 'GalleryController@accessoriesList')->name('accessories.show');*/
-
    Route::get('/accessories', 'CategoryController@accessories')->name('accessories.index');;
    Route::get('/accessories/{slug}', 'CategoryController@accessoriesList')->name('accessories.show');
 

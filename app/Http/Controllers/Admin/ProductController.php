@@ -36,7 +36,7 @@ class ProductController extends Controller
         $product->toggleStatus($request->get('status'));
         $product->save();
         //$product->addAttribute($request->get('attributes'));
-        $product->uploadAlbum($request->images);
+        $product->uploadAlbum('images/products/kitchens/', $request->images);
 
 
         return redirect()->back();
