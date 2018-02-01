@@ -21,7 +21,9 @@ Route::group(['prefix' => 'adminka-arm-page', 'namespace' => 'Admin'], function(
     Route::group(['middleware' => ['admin']], function() {
         Route::get('/', 'DashboardController@index')->name('admin.index');
         Route::resource('/products', 'ProductController');
+        Route::get('/products/delete-image/{productID}/{imageID}', 'ProductController@deleteImage')->name('products.delete-image');
         Route::resource('/galleries', 'GalleryController');
+        Route::resource('/categories', 'CategoryController');
     });
 });
 

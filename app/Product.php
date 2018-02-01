@@ -5,6 +5,7 @@ namespace App;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use File;
 
 class Product extends Model
 {
@@ -38,12 +39,14 @@ class Product extends Model
     public static function add($data) {
         $product = new static;
         $product->fill($data);
+        $product->save();
 
         return $product;
     }
 
     public function edit($data) {
         $this->fill($data);
+        $this->save();
 
         return $this;
     }
@@ -112,10 +115,11 @@ class Product extends Model
         $filename = str_random(10) . '.' . $image->extension();
         $image->storeAs($path, $filename);
         $this->image_main = $filename;
+        $this->save();
     }
 
     public function removeImage($path){
-        if($this->image_main != NULL) {
+        if(File::exists($path . $this->image) && $this->image_main != NULL) {
             Storage::delete($path . $this->image_main);
         }
     }
@@ -125,7 +129,6 @@ class Product extends Model
             return;
         }
         foreach ($images as $image) {
-            $this->removeImage($path);
             $filename = str_random(10) . '.' . $image->extension();
             $image->storeAs($path, $filename);
             Image::create(['name' => $filename, 'product_id' => $this->id]);
@@ -140,6 +143,15 @@ class Product extends Model
     public function remove($path) {
         $this->removeImage($path);
         $this->delete();
+
+        return $this;
+    }
+
+    public function removeAlbum($path) {
+        $images = $this->images;
+        foreach ($images as $image) {
+            $image->remove($path);
+        }
     }
 
     public function hasVideo() {
@@ -154,15 +166,34 @@ class Product extends Model
         return $this->images()->first() != null ? true : false;
     }
 
-    public function hasAttributes(){
+    /*attributes*/
+    public function hasProductAttributes(){
         return $this->attributes()->first() != null ? true : false;
     }
 
-    public function getAttribs() {
+    public function getProductAttributes() {
         return $this->attributes()->get();
     }
-/*    public function getAttributes() {
-        return $this->attributes()->get();
-    }*/
+
+    public function addAttributes($data) {
+        if ($data == null) {
+            return;
+        }
+        $attributes = Attribute::add($data, $this->id);
+        $attributes->save();
+    }
+
+    public function removeProductAttributes() {
+        $attributes = $this->getProductAttributes();
+        foreach ($attributes as $attribute) {
+            $attribute->delete();
+        }
+    }
+
+    public function editAttributes($data) {
+        $this->removeProductAttributes();
+        $this->addAttributes($data);
+    }
+    /*end*/
 
 }

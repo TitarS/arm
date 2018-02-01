@@ -21,8 +21,8 @@ class CreateAttributesTable extends Migration
         Schema::create('attribute_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('attribute_id')->unsigned();
-            $table->string('name');
-            $table->string('value');
+            $table->string('name')->nullable();
+            $table->string('value')->nullable();
             $table->string('locale')->index();
             $table->unique(['attribute_id', 'locale']);
             $table->foreign('attribute_id')->references('id')

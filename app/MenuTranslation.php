@@ -10,6 +10,7 @@ class MenuTranslation extends Model
     protected $fillable= [
         'title',
         'description',
+        'content',
         'text_bottom',
         'text_top'
     ];

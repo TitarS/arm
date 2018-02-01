@@ -16,21 +16,15 @@ class Attribute extends Model
         'value'
     ];
 
-/*    public static function add($name, $value, $locale, $id) {
-        $attribute = new static;
-        $attribute->name = $name;
-        $attribute->value = $value;
-        $attribute->locale = $locale;
-        $attribute->post_id = $id;
-        $attribute->save();
-    }*/
-
-/*    public static function add($data, $id) {
-        $attribute = new static;
-        $attribute->product_id = $id;
-        $attribute->fill($data);
+    public static function add($data, $productID) {
+        foreach ($data as $requestAttribute) {
+            $attribute = new static;
+            $attribute->product_id = $productID;
+            $attribute->fill($requestAttribute);
+            $attribute->save();
+        }
 
         return $attribute;
-    }*/
+    }
 
 }

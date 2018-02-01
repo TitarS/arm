@@ -27,6 +27,7 @@ class GalleryController extends Controller
             'ru.title' => 'required',
             'en.title' => 'required',
             'uk.title' => 'required',
+            'image_main' => 'image|nullable'
         ]);
 
         $product = Product::add($request->all());
@@ -54,7 +55,8 @@ class GalleryController extends Controller
         $this->validate($request, [
             'ru.title' => 'required',
             'uk.title' => 'required',
-            'en.title' => 'required'
+            'en.title' => 'required',
+            'image_main' => 'image|nullable'
         ]);
 
         $product = Product::where("id", $id)->first();

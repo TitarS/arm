@@ -16,22 +16,23 @@ class CategoryController extends Controller
 
     public function ourWorksList($slug) {
         $currentMenu = Menu::where('slug', $slug)->firstOrFail();
-        $products = $currentMenu->products()->paginate(2);
+        $products = $currentMenu->products()->where('status', 1)->paginate(7);
 
         return view('pages.category_list', compact('currentMenu', 'products'));
     }
 
     public function accessories() {
         $currentMenu = Menu::where('slug', 'accessories')->firstOrFail();
-        $subMenus = $currentMenu->children()->get();
+        $subMenus = $currentMenu->children()->where('status', 1)->get();
 
         return view('pages.gallery', compact('currentMenu', 'subMenus'));
     }
 
     public function accessoriesList($slug) {
         $currentMenu = Menu::where('slug', $slug)->firstOrFail();
+        $products = $currentMenu->products()->where('status', 1)->get();
 
-        return view('pages.gallery_list', compact('currentMenu'));
+        return view('pages.gallery_list', compact('currentMenu', 'products'));
     }
 
 }

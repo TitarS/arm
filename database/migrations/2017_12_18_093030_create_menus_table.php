@@ -18,6 +18,8 @@ class CreateMenusTable extends Migration
             $table->string('slug');
             $table->string('image')->nullable();
             $table->integer('parent_id')->nullable();
+            $table->integer('status')->default(1);
+            $table->integer('sort')->default(0);
             $table->timestamps();
         });
 
@@ -26,8 +28,7 @@ class CreateMenusTable extends Migration
             $table->integer('menu_id')->unsigned();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->text('text_bottom')->nullable();
-            $table->text('text_top')->nullable();
+            $table->text('content')->nullable();
             $table->string('locale')->index();
 
             $table->unique(['menu_id', 'locale']);

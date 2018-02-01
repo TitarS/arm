@@ -35,13 +35,13 @@ class MenusSeeder extends Seeder
         Menu::create([
             'id' => 5,
             'slug' => 'classic-kitchens',
-            'image' => '/images/categories/classic-kitchens.jpg',
+            'image' => 'classic-kitchens.jpg',
             'parent_id' => 2,
         ]);
         Menu::create([
             'id' => 6,
             'slug' => 'modern-kitchens',
-            'image' => '/images/categories/modern-kitchens.jpg',
+            'image' => 'modern-kitchens.jpg',
             'parent_id' => 2,
         ]);
 
@@ -78,7 +78,7 @@ class MenusSeeder extends Seeder
             Menu::create([
                 'id' => $i,
                 'slug' => $name[$i - 7],
-                'image' => '/images/categories/' . $image[$i - 7],
+                'image' => $image[$i - 7],
                 'parent_id' => 3,
             ]);
         }
