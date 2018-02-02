@@ -7,6 +7,7 @@ use App\Mail\CustomerEmail;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Validator;
 use Validator;
+use Mail;
 
 class CustomersController extends Controller
 {
@@ -18,8 +19,8 @@ class CustomersController extends Controller
         ]);
         if($validator->passes()) {
             $customer = Customer::add($request->all());
-            \Mail::to($customer)->send(new CustomerEmail($customer));
-            //\Mail::to(env('MAIL_TO_ADDRESS'))->send(new CustomerEmail($customer));
+            //\Mail::to($customer)->send(new CustomerEmail($customer));
+            Mail::to(env('MAIL_TO_ADDRESS'))->send(new CustomerEmail($customer));
 
             return response()->json(['success' => trans('status.contact_sent')]);
         }
