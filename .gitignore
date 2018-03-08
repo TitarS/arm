@@ -13,4 +13,5 @@ yarn-error.log
 
 /public/assets
 /resources/views
-./package-lock.json
+package-lock.json
+– копія.env
